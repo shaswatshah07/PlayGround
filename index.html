@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#d8e6d1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23395649'/%3E%3Cpath d='M32 8 37 25 55 25 40 36 46 54 32 43 18 54 24 36 9 25 27 25Z' fill='%23f0d48b'/%3E%3C/svg%3E" />
+  <title>Wildermere — The Lost Vale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Wildermere action adventure game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><span class="brand-name">WILDERMERE</span><span class="brand-sub">THE LOST VALE</span></div></div>
+      <div class="quest-pill"><span class="quest-dot"></span><span>THE GOBLIN CAMP</span><span class="quest-divider"></span><span id="quest-count">0 / 8</span></div>
+      <button id="sound-button" class="icon-button" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+    <section class="status-panel">
+      <div class="hero-name"><span class="hero-emblem">✧</span><div><strong>WAYFARER</strong><small>Vale Explorer · Lv. 04</small></div></div>
+      <div class="bar-label"><span>VITALITY</span><span id="health-value">100</span></div>
+      <div class="meter health-meter"><div id="health-fill"></div><span></span></div>
+      <div class="bar-label stamina-label"><span>STAMINA</span><span id="stamina-value">100</span></div>
+      <div class="meter stamina-meter"><div id="stamina-fill"></div></div>
+      <div class="weapon-row"><span class="weapon-icon">⚔</span><div><strong>TRAILBLADE</strong><small>Well-worn · 24 DMG</small></div><kbd>SPACE</kbd></div>
+    </section>
+    <div class="region-label"><span class="region-rule"></span><div><small>WESTERN HIGHLANDS</small><strong>Fernwake Meadow</strong></div><span class="region-rule"></span></div>
+    <aside class="objective-card"><div class="objective-icon">⚔</div><div><small>YOUR OBJECTIVE</small><strong>Clear the goblin camp</strong><span>Defeat the raiders hiding in the vale.</span></div><div class="objective-progress" id="objective-progress">0/8</div></aside>
+    <div class="tip-card" id="tip-card"><span class="tip-icon">✦</span><span><b>Traveler's tip</b> — dodge through danger to avoid a hit.</span><button id="dismiss-tip" aria-label="Dismiss tip">×</button></div>
+    <div class="controls-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span><i></i><span><kbd>SPACE</kbd> SWING</span><i></i><span><kbd>SHIFT</kbd> DODGE</span></div>
+    <div class="minimap-frame"><div class="minimap-title">THE VALE <span>✦</span></div><canvas id="minimap" width="132" height="104"></canvas></div>
+    <div class="toast" id="toast"></div>
+    <div class="end-screen" id="end-screen" hidden><div class="end-card"><div class="end-spark">✦</div><small id="end-kicker">A QUIETER VALE</small><h1 id="end-title">The camp is clear.</h1><p id="end-copy">The wind moves softly through Fernwake Meadow once more.</p><button id="restart-button">RETURN TO THE VALE <span>↗</span></button></div></div>
+    <div class="mobile-controls" aria-label="Touch controls"><div class="joystick" id="joystick"><div class="joy-knob" id="joy-knob"></div></div><button id="mobile-attack" class="mobile-action">⚔<small>ATTACK</small></button><button id="mobile-dodge" class="mobile-dodge">↗</button></div>
+    <div class="screen-flash" id="screen-flash"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
